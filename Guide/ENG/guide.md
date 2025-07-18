@@ -10,7 +10,17 @@ This guide explains how to install and run **n8n** locally on a Windows 11 compu
 
 - Windows 11
 
-### 2. Software to Install
+---
+
+### 2. Scaricare WSL
+
+```bash
+wsl --install
+```
+
+---
+
+### 3. Software to Install
 
 - [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)
 - Optional: a text editor (e.g., Visual Studio Code or Notepad++)
@@ -22,7 +32,7 @@ This guide explains how to install and run **n8n** locally on a Windows 11 compu
 1. Visit the official site: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 2. Click on **Download for Windows (Windows 11)**
 3. Run the downloaded `.exe` installer.
-4. Follow the installation steps and **restart your computer** if prompted.
+4. Follow the installation steps and **restart your computer** if prompted.(check: Use WSL 2 instead od Hyper-V)
 5. Launch Docker Desktop and make sure it is **running** (whale icon in the system tray).
 
 ---

@@ -10,7 +10,17 @@ Questa guida ti spiega come installare ed eseguire **n8n** in locale su un compu
 
 - Windows 11
 
-### 2. Software da installare
+---
+
+### 2. Scaricare WSL
+
+```bash
+wsl --install
+```
+
+---
+
+### 3. Software da installare
 
 - [Docker Desktop per Windows](https://www.docker.com/products/docker-desktop/)
 - Facoltativo: un editor di testo (es. Visual Studio Code o Notepad++)
@@ -22,8 +32,14 @@ Questa guida ti spiega come installare ed eseguire **n8n** in locale su un compu
 1. Vai al sito ufficiale: [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
 2. Clicca su **Download for Windows (Windows 11)**
 3. Esegui l’installer `.exe` scaricato.
-4. Segui la procedura guidata e **riavvia il computer** se richiesto.
+4. Segui la procedura guidata e **riavvia il computer** se richiesto.(Check: Use WSL 2 instead od Hyper-V)
 5. Avvia Docker Desktop e verifica che sia **attivo** (icona balena nella barra delle applicazioni).
+
+Verifica della versione
+
+```bash
+docker --version
+```
 
 ---
 
@@ -35,7 +51,15 @@ Questa guida ti spiega come installare ed eseguire **n8n** in locale su un compu
 
 ---
 
-## 📝 3. Creazione del file `docker-compose.yml`
+## 📝 3. Creazione del container
+
+### Tramite cli
+
+```bash
+docker run -it -d --name n8n -p 5678:5678 -v ~/.n8n_data:/home/node/.n8n docker.io/n8nio/n8n
+```
+
+### Tramite file `docker-compose.yml`
 
 1. All'interno della cartella `n8n-docker`, crea un file chiamato `docker-compose.yml`
 2. Incolla il seguente contenuto:
