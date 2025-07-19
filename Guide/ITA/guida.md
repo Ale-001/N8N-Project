@@ -55,11 +55,30 @@ docker --version
 
 ### Tramite cli
 
+Non va
 ```bash
 docker run -it -d --name n8n -p 5678:5678 -v ~/.n8n_data:/home/node/.n8n docker.io/n8nio/n8n
 ```
 
-### Tramite file `docker-compose.yml`
+Oppure
+
+Comando Funzionante
+
+```bash
+docker run -it -d --name n8n -p 5678:5678 -v C:/Users/biond/n8n_data:/home/node/.n8n -e N8N_BASIC_AUTH_ACTIVE=true -e N8N_BASIC_AUTH_USER=admin -e N8N_BASIC_AUTH_PASSWORD=admin123 n8nio/n8n
+```
+
+```bash
+docker run -it -d --name n8n `
+  -p 5678:5678 `
+  -v C:/Users/biond/n8n_data:/home/node/.n8n `
+  -e N8N_BASIC_AUTH_ACTIVE=true `
+  -e N8N_BASIC_AUTH_USER=admin `
+  -e N8N_BASIC_AUTH_PASSWORD=admin123 `
+  n8nio/n8n
+```
+
+### Tramite file `docker-compose.yml` da testare
 
 1. All'interno della cartella `n8n-docker`, crea un file chiamato `docker-compose.yml`
 2. Incolla il seguente contenuto:
